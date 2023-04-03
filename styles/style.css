@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Marck+Script&family=Martian+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../components/images/fundo.jpg);
+    font-family: 'Martian Mono', monospace;
+    background-size: 75%;
+    height: 100vh;
+    font-size: 12px;
+}
+
+@media(min-width: 400px){
+    body{
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 600px){
+    body{
+        font-size: 18px;
+    }
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    background-color: #c9c9c9;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+}
+
+.container{
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.menu a{
+    display: block;
+    padding: 10px 20px;
+    transition: opacity 0.3s;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    opacity: 0.5;
+}
+
+.avatar{
+    float: right;
+    margin-left: 2em;
+}
+
+.avatar img{
+    border-radius: 50%;
+    height: 250px;
+    width: auto;
+}
+
+.titulos{
+    animation: linear 0.7s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{
+    0%{
+        transform: scale(0.2) translateX(30vw);
+        opacity: 0.2;
+    }
+    100%{
+        transform: scale(1) translateX(0vh);
+        opacity: 1;
+    }
+}
+
+.site-title,
+.site-subtitle{
+    color: black;
+    text-align: center;
+}
+
+.site-title{
+    font-size: 3em;
+    font-family: 'Kalam', cursive;
+    letter-spacing: 3px;
+}
+
+.site-subtitle{
+    font-style: italic;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+.portifolio,
+.contato,
+.sobre{
+    padding: 2em;
+    height: 100%;
+}
+
+.portifolio h2,
+.contato h2,
+.sobre h2{
+    font-family: 'Martian Mono', monospace;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: rgb(55, 55, 55);
+    margin-bottom: 2em;
+}
+
+.sobre p{
+    margin-bottom: 1em;
+    color: black;
+    text-indent: 1em;
+    text-align: justify;
+}
+
+.portifolio .grid{
+    display: grid;
+    gap: 2em;
+    justify-content: center;
+}
+
+@media (min-width: 560px){
+    .portifolio .grid{
+        grid-template-columns: 240px 240px;
+    }
+}
+
+@media (min-width: 880px){
+    .portifolio .grid{
+        grid-template-columns: 240px 240px 240px;
+        align-content: center;
+        height: calc(100vh - 6em - 87px);
+    }
+}
+
+.portifolio figure{
+    text-align: center;
+}
+
+.imagem-portifolio{
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5%;
+    object-position: left bottom;
+}
+
+.flip-card{
+    background-color: purple;
+    perspective: 280px;
+}
+
+.flip-card:hover .card{
+    transform: rotateY(180deg);
+}
+
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+
+    transition: transform 1s;
+}
+
+.card-front,
+.card-back{
+    position: absolute;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.card-back{
+    height: 180px;
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.contato a{
+    color: black;
+    font-size: 5em;
+    transition: text-shadow 0.5s;
+}
+
+.contato a:hover{
+    text-shadow: 2px 2px 3px green;
+}
+
+.contato a:active{
+    text-shadow: 0px 0px 0px;
+    color: green;
+}
